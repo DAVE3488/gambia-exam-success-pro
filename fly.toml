@@ -1,0 +1,22 @@
+# Fly.io: run `fly launch --no-deploy --copy-config`, then `fly volumes create ges_data --size 1`, then `fly deploy`
+app = "gambia-exam-success"
+primary_region = "cdg"
+
+[build]
+
+[env]
+  PORT = "8080"
+  HOST = "0.0.0.0"
+  DATA_DIR = "/data"
+  SECURE_COOKIES = "1"
+  TRUST_PROXY = "1"
+
+[mounts]
+  source = "ges_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "off"
+  min_machines_running = 1

@@ -1,0 +1,13 @@
+{
+  "name": "gambia-exam-success",
+  "version": "1.0.0",
+  "description": "Gambia Exam Success - GABECE and WASSCE practice PWA (zero dependencies, Node 22+)",
+  "private": true,
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test tests/api.test.js",
+    "test:e2e": "node tests/e2e.js && node tests/e2e-staff.js",
+    "provision-chief": "node scripts/provision-chief.js"
+  }
+}
